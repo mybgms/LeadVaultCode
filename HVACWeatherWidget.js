@@ -178,10 +178,10 @@ const EnhancedHVACTriggers = () => {
 };
 
 // Wrap main component with error boundary
-const HVACLeadTriggers = () => (
+const EnhancedHVACTriggers = () => (
   <ErrorBoundary>
     <EnhancedHVACTriggers />
   </ErrorBoundary>
 );
 
-export default HVACLeadTriggers;
+export default EnhancedHVACTriggers;
