@@ -49,8 +49,8 @@ const HVACTriggersContent = () => {
   const [error, setError] = useState(null);
 
   // Weather API configuration
-  const WEATHER_API_KEY = '9745775a9db25ca7d4d538c7fe37e58b'; // Replace with your API key
-  const CITY = 'Halifax'; // Replace with your city
+  const WEATHER_API_KEY = '9745775a9db25ca7d4d538c7fe37e58b';
+  const CITY = 'Halifax';
   const STATE = 'VA';
   const COUNTRY = 'US';
   
@@ -83,8 +83,7 @@ const HVACTriggersContent = () => {
       setArrivalMinutes(prev => {
         const newTime = Math.max(prev - 1, 15);
         if (newTime === 15) {
-          // Reset timer when it hits minimum
-          return 31;
+          return 31; // Reset timer when it hits minimum
         }
         return newTime;
       });
@@ -127,13 +126,13 @@ const HVACTriggersContent = () => {
 
   if (loading) return <LoadingSpinner />;
 
-if (error) {
-  return (
-    <div className="p-4 bg-red-50 rounded-lg">
-      <div className="text-red-600 font-bold">Error: {error}</div>
-    </div>
-  );
-}
+  if (error) {
+    return (
+      <div className="p-4 bg-red-50 rounded-lg">
+        <div className="text-red-600 font-bold">Error: {error}</div>
+      </div>
+    );
+  }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 bg-white rounded-lg shadow-sm">
