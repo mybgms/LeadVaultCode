@@ -83,7 +83,7 @@ const EnhancedHVACTriggers = () => {
         const newTime = Math.max(prev - 1, 15);
         if (newTime === 15) {
           // Reset timer when it hits minimum
-          return 45;
+          return 31;
         }
         return newTime;
       });
@@ -94,7 +94,7 @@ const EnhancedHVACTriggers = () => {
 
   // Simulate viewer count with realistic fluctuations
   useEffect(() => {
-    const baseViewers = 3;
+    const baseViewers = 9;
     const getRandomViewers = () => {
       const fluctuation = Math.floor(Math.random() * 3) - 1;
       return Math.max(2, Math.min(8, baseViewers + fluctuation));
