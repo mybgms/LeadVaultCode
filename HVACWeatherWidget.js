@@ -51,13 +51,15 @@ const EnhancedHVACTriggers = () => {
 
   // Weather API configuration
   const WEATHER_API_KEY = '9745775a9db25ca7d4d538c7fe37e58b'; // Replace with your API key
-  const CITY = 'Halifax, VA'; // Replace with your city
+  const CITY = 'Halifax'; // Replace with your city
+  const STATE = 'VA';
+  const COUNTRY = 'US';
   
   // Fetch weather data
   const fetchWeather = useCallback(async () => {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${WEATHER_API_KEY}&units=imperial`
+        `https://api.openweathermap.org/data/2.5/weather?q=${CITY},${STATE},${COUNTRY}&appid=${WEATHER_API_KEY}&units=imperial`
       );
       if (!response.ok) throw new Error('Weather data fetch failed');
       const data = await response.json();
