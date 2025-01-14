@@ -50,8 +50,8 @@ const EnhancedHVACTriggers = () => {
   const [error, setError] = useState(null);
 
   // Weather API configuration
-  const WEATHER_API_KEY = 'YOUR_OPENWEATHERMAP_API_KEY'; // Replace with your API key
-  const CITY = 'YOUR_CITY'; // Replace with your city
+  const WEATHER_API_KEY = '9745775a9db25ca7d4d538c7fe37e58b'; // Replace with your API key
+  const CITY = 'Halifax, VA'; // Replace with your city
   
   // Fetch weather data
   const fetchWeather = useCallback(async () => {
