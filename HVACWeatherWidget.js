@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronDown, Clock, Users, CheckCircle, AlertTriangle } from 'lucide-react';
-import { Alert, AlertDescription } from '@/components/ui/alert';
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component {
@@ -40,7 +39,7 @@ const LoadingSpinner = () => (
 );
 
 // Main Component
-const EnhancedHVACTriggers = () => {
+const HVACTriggersContent = () => {
   // State management
   const [temperature, setTemperature] = useState(null);
   const [arrivalMinutes, setArrivalMinutes] = useState(45);
@@ -128,13 +127,13 @@ const EnhancedHVACTriggers = () => {
 
   if (loading) return <LoadingSpinner />;
 
-  if (error) {
-    return (
-      <Alert variant="destructive">
-        <AlertDescription>{error}</AlertDescription>
-      </Alert>
-    );
-  }
+if (error) {
+  return (
+    <div className="p-4 bg-red-50 rounded-lg">
+      <div className="text-red-600 font-bold">Error: {error}</div>
+    </div>
+  );
+}
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 bg-white rounded-lg shadow-sm">
@@ -180,7 +179,7 @@ const EnhancedHVACTriggers = () => {
 // Wrap main component with error boundary
 const EnhancedHVACTriggers = () => (
   <ErrorBoundary>
-    <EnhancedHVACTriggers />
+    <HVACTriggersContent />
   </ErrorBoundary>
 );
 
